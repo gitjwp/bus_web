@@ -52,5 +52,6 @@ def main():
         print_station("115065", True, "112")
         print_title("집 > 학원")
         print_station("115846", True, "112")
+    st.write("Now is " + now.hour)
 
 main()
