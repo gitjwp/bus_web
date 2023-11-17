@@ -28,11 +28,11 @@ def print_station(Id, selection, selected_bus):
             for next_bus in bus["arrival"]["buses"]:
                 sec = int(next_bus["remainingTime"])
                 if sec < 300:
-                    text = ":orange[" + str(sec // 60) + "분 " + str(sec % 60) + "초], " + next_bus["remainingStop"] + "역 전"
+                    text = ":orange[" + str(sec // 60) + "분 " + str(sec % 60) + "초], " + str(next_bus["remainingStop"]) + "역 전"
                 else:
-                    text = ":blue[" + str(sec // 60) + "분 " + str(sec % 60) + "초], " + next_bus["remainingStop"] + "역 전"
+                    text = ":blue[" + str(sec // 60) + "분 " + str(sec % 60) + "초], " + str(next_bus["remainingStop"]) + "역 전"
                 if next_bus["remainingSeat"] != None:
-                    text += ", 남은 좌석 : " + next_bus["remainingSeat"]
+                    text += ", 남은 좌석 : " + str(next_bus["remainingSeat"])
                 st.write(text)
         else:
             st.write(":red[운행 안 하는 중]")
