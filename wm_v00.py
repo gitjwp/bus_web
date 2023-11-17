@@ -41,6 +41,7 @@ def main():
     # streamlit 시차 고려
     import datetime
     now = datetime.datetime.now() + datetime.timedelta(hours=9)
+    weekday = now.weekday
     
     # 학원 > 집
     if weekday == 3 or weekday == 4:
