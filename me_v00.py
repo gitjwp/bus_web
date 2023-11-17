@@ -38,8 +38,10 @@ def print_station(Id, selection, selected_bus):
             st.write(":red[운행 안 하는 중]")
 
 def main():
+    # streamlit 시차 고려
     import datetime
     now = datetime.datetime.now() + datetime.timedelta(hours=9)
+    
     # 학원 가는거
     if now.hour < 15:
         print_title("집 > 학원")
@@ -52,6 +54,7 @@ def main():
         print_station("115065", True, "112")
         print_title("집 > 학원")
         print_station("115846", True, "112")
-    st.write(str(now.day) + ", " + str(now.hour) + ":"+str(now.minute))
+
+    st.write(str(now.hour) + ":" + str(now.minute) + " 기준")
 
 main()
