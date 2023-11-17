@@ -38,8 +38,8 @@ def print_station(Id, selection, selected_bus):
             st.write(":red[운행 안 하는 중]")
 
 def main():
-    from datetime import datetime
-    now = datetime.now()
+    import datetime
+    now = datetime.datetime.now() + datetime.timedelta(hours=9)
     # 학원 가는거
     if now.hour < 15:
         print_title("집 > 학원")
