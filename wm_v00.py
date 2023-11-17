@@ -38,20 +38,25 @@ def print_station(Id, selection, selected_bus):
             st.write(":red[운행 안 하는 중]")
 
 def main():
-    from datetime import datetime
-    weekday = datetime.today().weekday()
+    # streamlit 시차 고려
+    import datetime
+    now = datetime.datetime.now() + datetime.timedelta(hours=9)
+    
     # 학원 > 집
     if weekday == 3 or weekday == 4:
         print_title("학원에서 집가기")
         print_station('101480', True, ['5712'])
         print_title("집에서 학교가기")
         print_station('101401', True, ['603', '5012', '6617'])
+        
     # 집 > 학교
     else:
         print_title("집에서 학교가기")
         print_station('101401', True, ['603', '5012', '6617'])
         print_title("학원에서 집가기")
         print_station('101480', True, ['5712'])
+
+    st.write(str(now.hour) + ":" + str(now.minute) + " 기준")
 
 main()
 
