@@ -134,7 +134,7 @@ def display(S):
                     bus_content = ":red[운행 안 하는 중]"
                 
                 dS.write(bus_content)
-            if station.least_time == None:
+            if not station.least_time == None:
                 station.least_time -= 1
 
         time.sleep(1)
