@@ -107,6 +107,7 @@ def display(S):
         dS = UI.container()
         for i, station in enumerate(S.stations):
             # 업데이트가 필요한지 검사 & 실행
+            dS.write(station.least_time)
             if station.least_time != None:
                 if station.least_time < 5 or station.least_time % 30 == 0:
                     station_data(station)
